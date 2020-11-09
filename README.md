@@ -1,6 +1,6 @@
 # Weather-Time
 
-* Try it out for yourself here!
+* [`Try it out for yourself here!`](https://richardmshaw.github.io/Weather-Time/)
 A simple weather dashboard that displays today's weather and a 5 day forecast if which ever city you look up.
 ![image](screenshots/Dashboard.png)
 
