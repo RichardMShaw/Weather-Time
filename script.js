@@ -27,7 +27,7 @@ const displayWeather = (city) => {
           let current = data.current
           let unixTimestamp = current.dt
           let date = new Date(unixTimestamp * 1000)
-          let htmlText = `<h1>${city} (${date.getMonth()}/${date.getDate()}/${date.getFullYear()})<img src="https://openweathermap.org/img/wn/${data.current.weather[0].icon}@2x.png"></h1>
+          let htmlText = `<h1>${city} (${date.getMonth()}/${date.getDate()}/${date.getFullYear()})<img src="https://openweathermap.org/img/wn/${current.weather[0].icon}@2x.png" alt="${current.weather[0].icon}@2x.png"></h1>
                               <p>Temperature: ${current.temp} °F</p>
                               <p>Humidity: ${current.humidity}%</p>
                               <p>Wind Speed: ${current.wind_speed} MPH</p>
@@ -41,15 +41,15 @@ const displayWeather = (city) => {
             unixTimestamp = current.dt
             date = new Date(unixTimestamp * 1000)
             htmlText += `<div class="col-md">
-                              <div class="card">
-                                <div class="card-body bg-primary text-light forecast">
-                                  <h4>${date.getMonth()}/${date.getDate()}/${date.getFullYear()}</h4>
-                                  <img src="https://openweathermap.org/img/wn/${data.current.weather[0].icon}@2x.png">
-                                  <p>Temp: ${current.temp.max} °F</p>
-                                  <p>Humidity: ${current.humidity}%</p>
-                                </div>
+                            <div class="card">
+                              <div class="card-body bg-primary text-light forecast">
+                                <h4>${date.getMonth()}/${date.getDate()}/${date.getFullYear()}</h4>
+                                <img src="https://openweathermap.org/img/wn/${data.current.weather[0].icon}@2x.png" alt="${data.current.weather[0].icon}@2x.png">
+                                <p>Temp: ${current.temp.max} °F</p>
+                                <p>Humidity: ${current.humidity}%</p>
                               </div>
-                            </div>`
+                            </div>
+                          </div>`
           }
 
           document.getElementById('fiveDayForecast').innerHTML = htmlText
@@ -66,8 +66,8 @@ const displaySearchHistory = () => {
   let len = searchHistory.length - 1
   for (let i = len; i > -1; i--) {
     htmlText += `<li>
-                        <button type="button" class="btn btn-outline-secondary search-history-button" value="${searchHistory[i]}">${searchHistory[i]}</button>
-                      </li>`
+                    <button type="button" class="btn btn-outline-secondary search-history-button" value="${searchHistory[i]}">${searchHistory[i]}</button>
+                  </li>`
   }
   list.innerHTML = htmlText
 }
@@ -102,7 +102,7 @@ document.getElementById('searchButton').addEventListener('click', (event) => {
 document.addEventListener('click', (event) => {
   event.preventDefault()
   let target = event.target
-  if (target.classList.contains('search-result')) {
+  if (target.classList.contains('search-history-button')) {
     displayWeather(target.value)
   }
 })
