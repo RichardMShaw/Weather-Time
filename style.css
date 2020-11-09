@@ -1,0 +1,44 @@
+nav {
+  background-color: rgb(49, 49, 49);
+  color: white;
+  text-align: center;
+  font-size: 4rem;
+}
+
+main {
+  margin: 1rem;
+}
+
+#clearHistoryButton {
+  margin-bottom: 0.5rem;
+}
+
+.search-history-button {
+  width: 100%;
+  background: white;
+  text-align: left;
+}
+
+.col-md-3 {
+  background-color: rgb(235, 235, 235);
+}
+
+.uvi {
+  color: white;
+}
+
+.uvi-red {
+  background-color: rgb(143, 0, 0);
+}
+
+.uvi-orange {
+  background-color: rgb(160, 104, 0);
+}
+
+.uvi-yellow {
+  background-color: rgb(141, 141, 0);
+}
+
+.uvi-green {
+  background-color: green;
+}
